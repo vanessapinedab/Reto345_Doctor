@@ -30,7 +30,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class MensajeWeb {
     
     @Autowired
-    private serviciosMensaje servico;
+    private ServiciosMensaje servico;
     @GetMapping("/all")
     public List<Mensaje> getMessages(){
         return servico.getAll();

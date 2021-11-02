@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service;
  * @author Usuario
  */
 @Service
-public class serviciosEspecialidad {
+public class ServiciosEspecialidad {
     
     @Autowired
      private RepositorioEspecialidad metodosCrud;
@@ -62,5 +62,8 @@ public class serviciosEspecialidad {
         }).orElse(false);
         return d;
     }
+    
+    
+    
     
 }

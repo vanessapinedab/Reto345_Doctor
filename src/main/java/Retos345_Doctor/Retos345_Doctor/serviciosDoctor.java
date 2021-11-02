@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service;
  * @author Usuario
  */
 @Service
-public class serviciosDoctor {
+public class ServiciosDoctor {
     
     @Autowired
     private RepositorioDoctor metodosCrud;

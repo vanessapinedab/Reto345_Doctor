@@ -20,42 +20,50 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+@RestController
+@RequestMapping("/api/Especialidad")
+@CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST,RequestMethod.PUT,RequestMethod.DELETE})
+
 /**
  *
  * @author Usuario
  */
-@RestController
-@RequestMapping("/api/Doctor")
-@CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST,RequestMethod.PUT,RequestMethod.DELETE})
-public class DoctorWeb {
+public class EspecialidadWeb {
     
     @Autowired
-    private ServiciosDoctor servicio;
+    private ServiciosEspecialidad serviciosEspecialidad;
     @GetMapping("/all")
-    public List<Doctor> getDoctors(){
-        return servicio.getAll();
+    public List<Especialidad> getEspecialidad(){
+
+        return serviciosEspecialidad.getAll();
     }
 
     @GetMapping("/{id}")
-    public Optional<Doctor> getDoctor(@PathVariable("id") int doctorId) {
-        return servicio.getDoctor(doctorId);
+    public Optional<Especialidad> getEspecialidad(@PathVariable("id") int id) {
+
+        return serviciosEspecialidad.getEspecialidad(id);
     }
 
     @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
-    public Doctor save(@RequestBody Doctor doctor) {
-        return servicio.save(doctor);
+    public Especialidad save(@RequestBody Especialidad specialty) {
+
+        return serviciosEspecialidad.save(specialty);
     }
     @PutMapping("/update")
     @ResponseStatus(HttpStatus.CREATED)
-    public Doctor update(@RequestBody Doctor doctor) {
-        return servicio.update(doctor);
-    }
+    public Especialidad update(@RequestBody Especialidad specialty) {
 
+        return serviciosEspecialidad.update(specialty);
+    }
+    
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public boolean delete(@PathVariable("id") int doctorId) {
-        return servicio.deleteDoctor(doctorId);
+    public boolean delete(@PathVariable("id") int id) {
+
+        return serviciosEspecialidad.deleteespecialidad(id);
     }
+
+
     
 }

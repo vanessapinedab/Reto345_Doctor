@@ -30,7 +30,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class ReservacionesWeb {
     
     @Autowired
-    private serviciosReservaciones servicio;
+    private ServiciosReservaciones servicio;
     @GetMapping("/all")
     public List<Reservaciones> getReservations(){
         return servicio.getAll();

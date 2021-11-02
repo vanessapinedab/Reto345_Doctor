@@ -18,7 +18,7 @@ import org.springframework.stereotype.Service;
 */
 @Service
 //clase pública serviciosReservaciones
-public class serviciosReservaciones {
+public class ServiciosReservaciones {
     
     /**
 * @Autowired
